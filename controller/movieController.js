@@ -52,6 +52,20 @@ const show = (req,res) => {
 
     })
 }
+//storeReviews
+const storeReviews = (req, res) => {
+    
+    const {id} = req.params;
+    
+    const {name, vote, text} = req.body;
+    
+    const sql = "INSERT INTO reviews (movie_id, name, vote, text) VALUES (?, ?, ?, ?)"
 
+    connection.query(sql, [id, name, vote, text], (err, result) => {
+        if(err) return res.status(500).json({error: `Errore nella query di inserimento recensione: ${err}`});
+
+        res.status(201).json({result: true, message: `Inserimento avvenuto con sullesso`});
+    })
+}
 
 
