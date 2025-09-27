@@ -2,6 +2,9 @@ const express = require('express')
 const connection = require('./data/db');
 const app = express()
 const port = 3000
+const list = {
+////////
+}
 app.get('/', (req, res) => {
 res.send('Rotta base')
 })
