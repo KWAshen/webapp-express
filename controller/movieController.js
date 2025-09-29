@@ -69,3 +69,4 @@ const storeReviews = (req, res) => {
 }
 
 
+module.exports = {index,show,storeReviews}
